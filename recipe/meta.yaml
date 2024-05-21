@@ -1,5 +1,5 @@
 {% set name = "functional_algorithms" %}
-{% set version = "0.1.0" %}
+{% set version = "0.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/functional_algorithms-{{ version }}.tar.gz
-  sha256: 5ab6b44cd72e2d0bdace4a01ee8013f7a8cc1e84d3145edb9bff46997e4c5ce0
+  sha256: da535841039b80ee4ca155d6cdae7a588a3868351a6c62542789ca1e542bfc3a
 
 build:
   noarch: python
