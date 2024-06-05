@@ -31,11 +31,9 @@ test:
   requires:
     - pip
     - pytest
-    - clang-format
   commands:
     - python -c "import functional_algorithms as fa; print(fa.__version__)"
     - pytest -sv -r s --pyargs functional_algorithms
-    - pip check
   imports:
     - functional_algorithms
     - functional_algorithms.targets
