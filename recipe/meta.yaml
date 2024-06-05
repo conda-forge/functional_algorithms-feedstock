@@ -1,5 +1,5 @@
 {% set name = "functional_algorithms" %}
-{% set version = "0.2.0" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/functional_algorithms-{{ version }}.tar.gz
-  sha256: 237e4cac30ebdaffbe8af655933ac87a7fc6d3b55d28a84b1117f27d33fac932
+  sha256: 52ceb988939838b7e1f35351facaa3917028585a01ceba1cc92518d511c80070
 
 build:
   noarch: python
@@ -25,6 +25,7 @@ requirements:
     - black
     - numpy
     - mpmath
+    - clang-format
 
 test:
   requires:
@@ -33,7 +34,6 @@ test:
   commands:
     - python -c "import functional_algorithms as fa; print(fa.__version__)"
     - pytest -sv -r s --pyargs functional_algorithms
-    - pip check
   imports:
     - functional_algorithms
     - functional_algorithms.targets
