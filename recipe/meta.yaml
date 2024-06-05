@@ -25,6 +25,7 @@ requirements:
     - black
     - numpy
     - mpmath
+    - clang-format
 
 test:
   requires:
