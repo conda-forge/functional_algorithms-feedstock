@@ -1,3 +1,4 @@
+{% set python_min = '3.11' %}
 {% set name = "functional_algorithms" %}
 {% set version = "0.15.0" %}
 
@@ -12,16 +13,16 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.11
+    - python {{ python_min }}
     - setuptools >=64
     - setuptools-scm >=8
     - pip
   run:
-    - python >=3.11
+    - python >={{ python_min }}
     - black
     - numpy
     - mpmath
@@ -31,6 +32,7 @@ test:
   requires:
     - pip
     - pytest
+    - python {{ python_min }}
   commands:
     - python -c "import functional_algorithms as fa; print(fa.__version__)"
     - pytest -sv -r s --pyargs functional_algorithms
